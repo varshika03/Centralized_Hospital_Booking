@@ -31,7 +31,7 @@ app.use(bodyParser.json())
 conn.getConnection(
             function (err, client) {
                 if(err){
-                        console.log(error);
+                        console.log(err);
                     }
                     else
                     {
