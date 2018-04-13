@@ -30,18 +30,22 @@ app.use(bodyParser.json())
  
 conn.getConnection(
             function (err, client) {
+                if(err){
+                        console.log(error);
+                    }
+                    else
+                    {
             	
                 client.query("use db", function(err, rows) {
                     // And done with the connection.
-                    if(err){
-                        console.log(error);
-                    }
+                    
 
                   
                     client.release();
 
                     // Don't use the connection here, it has been returned to the pool.
                 });
+            }
 
         });   
 app.set('view engine','hbs');
@@ -70,6 +74,12 @@ app.get('/patient_login',(req,res)=>{
 app.post('/patient_registered',(req,res)=>{
   conn.getConnection(
     function (err, client) {
+        if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
             //insert check for inserting unique email ids
             	 var sql=`Insert into patient Values("${req.body.firstname}","${req.body.lastname}","${req.body.age}","${req.body.gender}","${req.body.BirthDate}","${req.body.address}","${req.body.email}","${req.body.number}","${req.body.password}")`;
                 client.query(sql, function(err, rows) {
@@ -86,6 +96,9 @@ app.post('/patient_registered',(req,res)=>{
 
                     // Don't use the connection here, it has been returned to the pool.
                 });
+            }
+        
+        
 
         });   
 
@@ -99,6 +112,12 @@ app.get('/patient_page',(req,res)=>{
 app.post('/patient_page',(req,res)=>{
   conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
             	var sql=`Select password from patient where email = "${req.body.email}"`;
                 client.query(sql, function(err, rows) {
                 	console.log(rows[0].password);
@@ -118,7 +137,7 @@ app.post('/patient_page',(req,res)=>{
                   
                     client.release();
                 });
-
+}
                     // Don't use the connection here, it has been returned to the pool.
                 });
 
@@ -135,6 +154,12 @@ res.render('hospital_type.hbs');
 app.post('/select_hospital',(req,res)=>{
     conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 console.log(req.body);
                 var sql=`Select name from hospital where type = "${req.body.type}"`;
                 client.query(sql, function(err, rows) {
@@ -148,6 +173,7 @@ app.post('/select_hospital',(req,res)=>{
 }
 client.release();
 });
+            }
 });
 });
 
@@ -155,6 +181,12 @@ app.post('/select_doctor',(req,res)=>{
     current_appointment.hname=req.body.hospital;
     conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Select hid from hospital where name = "${req.body.hospital}"`;
                 client.query(sql, function(err, rows) {
                     current_appointment.hid=rows[0].hid;
@@ -166,6 +198,7 @@ app.post('/select_doctor',(req,res)=>{
 });
 });
                 client.release();
+            }
             });
 });
 
@@ -174,15 +207,23 @@ app.post('/date_time',(req,res)=>{
 
     conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Select name from doctor where did = ${req.body.doctor}`;
                 client.query(sql, function(err, rows) {
                     current_appointment.dname=rows[0].name;
                 });
                 client.release();
-            });
+
            
 
     res.render("date_time.hbs");
+}
+});
 });
 
 app.post('/receipt',(req,res)=>{
@@ -190,6 +231,12 @@ app.post('/receipt',(req,res)=>{
     current_appointment.time=req.body.time;
     conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Insert into appointment values("${current_id}",${current_appointment.did},${current_appointment.hid},"${current_appointment.date}","${current_appointment.time}","${current_id}")`;
                 client.query(sql, function(err, rows) {
                     if(err)
@@ -203,12 +250,19 @@ app.post('/receipt',(req,res)=>{
 }
 });
                 client.release();
+            }
             });
 });
 
 app.get('/update_profile',(req,res)=>{
      conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 if(current_id!='')
                 {
                 var sql=`Select * from patient where email="${current_id}" `;
@@ -227,12 +281,19 @@ app.get('/update_profile',(req,res)=>{
                 {
                     res.send("Login first");
                 }
+            }
 });
  });
 
 app.post('/profile_updated',(req,res)=>{
      conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Update patient set FirstName="${req.body.firstname}",LastName="${req.body.lastname}",age="${req.body.age}",Address="${req.body.address}",contact="${req.body.number}" where email = "${current_id}"`;
                 console.log(sql);
                 client.query(sql, function(err, rows) {
@@ -241,7 +302,7 @@ app.post('/profile_updated',(req,res)=>{
                 else
                     res.render("patient_page.hbs");
             });
-            
+            }
   
 });
  });
@@ -256,6 +317,12 @@ else
 app.post('/password_updated',(req,res)=>{
     conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Select password from patient where email = "${current_id}"`;
                 client.query(sql, function(err, rows) {
                 if(err )
@@ -281,6 +348,7 @@ app.post('/password_updated',(req,res)=>{
             
   
 });
+            }
 });
 
 });
@@ -292,6 +360,12 @@ app.get('/view_appointments',(req,res)=>{
     {
         conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Select p.FirstName,p.LastName,h.name as Hospital,d.name as Doctor,date, time from patient p,hospital h,doctor d,appointment a where a.patient_id = "${current_id}" and p.email="${current_id}"   and a.hid = h.hid and a.did = d.did`;
                 client.query(sql, function(err, rows) {
                 if(err )
@@ -303,6 +377,7 @@ app.get('/view_appointments',(req,res)=>{
                     });
                 }
             });
+            }
             });
     }
 
@@ -331,6 +406,12 @@ app.get('/hospital_page',(req,res)=>{
 app.post('/hospital_page',(req,res)=>{
   conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 console.log(req.body.id);
                 var sql=`Select password from hospital where hid = ${req.body.id}`;
                 console.log(sql);
@@ -350,7 +431,7 @@ app.post('/hospital_page',(req,res)=>{
                 });
 
                     // Don't use the connection here, it has been returned to the pool.
-                });
+               } });
 
         
 
@@ -367,6 +448,12 @@ app.get('/view_profile',(req,res)=>{
     {
   conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Select * from hospital where hid = ${current_hospital}`;
                 console.log(sql);
                 client.query(sql, function(err, rows) {
@@ -378,7 +465,7 @@ app.get('/view_profile',(req,res)=>{
                 });
 
                     // Don't use the connection here, it has been returned to the pool.
-                });
+               } });
 }
 
     });
@@ -393,6 +480,12 @@ else
 app.post('/hospital_password_updated',(req,res)=>{
     conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Select password from hospital where hid = ${current_hospital}`;
                 client.query(sql, function(err, rows) {
                 if(err )
@@ -418,6 +511,7 @@ app.post('/hospital_password_updated',(req,res)=>{
             
   
 });
+            }
 });
 
 });
@@ -425,6 +519,12 @@ app.post('/hospital_password_updated',(req,res)=>{
 app.get('/update_hospital_profile',(req,res)=>{
      conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 if(current_hospital!=-1)
                 {
                 var sql=`Select * from hospital where  hid = ${current_hospital}`;
@@ -443,12 +543,19 @@ app.get('/update_hospital_profile',(req,res)=>{
                 {
                     res.send("Login first");
                 }
+            }
 });
  });
 
 app.post('/hospital_profile_updated',(req,res)=>{
      conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Update hospital set name="${req.body.name}",type="${req.body.type}",address="${req.body.address}",Contact="${req.body.Contact}" where hid = ${current_hospital}`;
                 console.log(sql);
                 client.query(sql, function(err, rows) {
@@ -457,6 +564,7 @@ app.post('/hospital_profile_updated',(req,res)=>{
                 else
                     res.render("hospital/hospital_page.hbs");
             });
+            }
             
   
 });
@@ -469,6 +577,12 @@ app.get('/hospital_view_appointments',(req,res)=>{
     {
         conn.getConnection(
             function (err, client){
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
 
                 var sql=`Select p.FirstName,p.LastName,d.name as Doctor,date, time from patient p,doctor d, hospital h,appointment a where a.hid = ${current_hospital} and a.did = d.did and a.email = p.email and h.hid = ${current_hospital}`;
                 client.query(sql, function(err, rows) {
@@ -481,6 +595,7 @@ app.get('/hospital_view_appointments',(req,res)=>{
                     });
                 }
             });
+            }
             });
     }
 
@@ -494,6 +609,12 @@ app.get('/hospital_view_doctors',(req,res)=>{
     {
         conn.getConnection(
             function (err, client){
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
 
                 var sql=`Select d.did,d.name as doctor,dept.name as department,d.fee from doctor d, department dept where d.dept=dept.id and d.hid=${current_hospital} order by d.did`;
                 client.query(sql, function(err, rows) {
@@ -506,6 +627,7 @@ app.get('/hospital_view_doctors',(req,res)=>{
                     });
                 }
             });
+            }
             });
     }
 
@@ -521,6 +643,12 @@ if(current_hospital==-1)
     
         conn.getConnection(
             function (err, client){
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
 
                 var sql=`Select * from department`;
                 client.query(sql, function(err, rows) {
@@ -533,6 +661,7 @@ if(current_hospital==-1)
                     });
                 }
             });
+            }
             });
     }
 
@@ -542,6 +671,12 @@ app.post('/doctorsAdded',(req,res)=>{
 
   conn.getConnection(
             function (err, client){
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
 
                 var sql=`Insert into doctor values(${req.body.did},"${req.body.name}",${req.body.department},${req.body.fee},${current_hospital},"${req.body.password}")`;
                 client.query(sql, function(err, rows) {
@@ -552,6 +687,7 @@ app.post('/doctorsAdded',(req,res)=>{
                     res.render("hospital/hospital_page.hbs");
                 }
             });
+            }
             });
 });
 
@@ -559,6 +695,12 @@ app.get('/hospital_remove_doctors',(req,res)=>{
 
 conn.getConnection(
             function (err, client){
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
 
                 var sql=`Select d.did,d.name as doctor,dept.name as department,d.fee from doctor d, department dept where d.dept=dept.id and d.hid=${current_hospital} order by d.did`;
                 client.query(sql, function(err, rows) {
@@ -571,6 +713,7 @@ conn.getConnection(
                     });
                 }
             });
+            }
             });
 
     
@@ -580,6 +723,12 @@ app.post('/confirm_doctor_removal',(req,res)=>{
 
 conn.getConnection(
             function (err, client){
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
 
                 var sql=`Delete from doctor where did = ${req.body.doctor}`;
                 client.query(sql, function(err, rows) {
@@ -592,6 +741,7 @@ conn.getConnection(
                     });
                 }
             });
+            }
             });
 });
 
@@ -619,6 +769,12 @@ app.get('/doctor_page',(req,res)=>{
 app.post('/doctor_page',(req,res)=>{
   conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 console.log(req.body.id);
                 var sql=`Select password from doctor where did = ${req.body.id}`;
                 console.log(sql);
@@ -638,7 +794,8 @@ app.post('/doctor_page',(req,res)=>{
                 });
 
                     // Don't use the connection here, it has been returned to the pool.
-                });
+               } });
+});
 
         
 app.get('/view_doctor_profile',(req,res)=>{
@@ -650,6 +807,12 @@ app.get('/view_doctor_profile',(req,res)=>{
     {
   conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Select d.did,d.name as doctor,dept.name as department,d.fee,h.name as hospital from doctor d, department dept, hospital h where d.did = ${current_doctor} and h.hid =d.hid and dept.id=d.dept`;
                 console.log(sql);
                 client.query(sql, function(err, rows) {
@@ -659,11 +822,11 @@ app.get('/view_doctor_profile',(req,res)=>{
                   });
                     client.release();
                 });
-
+}
                     // Don't use the connection here, it has been returned to the pool.
                 });
-}
 
+}
     });
 
 app.get('/update_doctor_password',(req,res)=>{
@@ -676,6 +839,12 @@ else
 app.post('/doctor_password_updated',(req,res)=>{
     conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Select password from doctor where did = ${current_doctor}`;
                 client.query(sql, function(err, rows) {
                 if(err )
@@ -701,6 +870,7 @@ app.post('/doctor_password_updated',(req,res)=>{
             
   
 });
+            }
 });
 
 });
@@ -714,6 +884,12 @@ app.get('/update_doctor_fee',(req,res)=>{
     {
      conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 
                 var sql=`Select fee from doctor where  did = ${current_doctor}`;
                 console.log(sql);
@@ -726,7 +902,7 @@ app.get('/update_doctor_fee',(req,res)=>{
 
                     });
             });
-           
+       }    
 });
  }
  });
@@ -734,6 +910,12 @@ app.get('/update_doctor_fee',(req,res)=>{
 app.post('/doctor_fee_updated',(req,res)=>{
      conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Update doctor set fee="${req.body.fee}" where did = ${current_doctor}`;
                 console.log(sql);
                 client.query(sql, function(err, rows) {
@@ -742,6 +924,7 @@ app.post('/doctor_fee_updated',(req,res)=>{
                 else
                     res.render("doctor/doctor_page.hbs");
             });
+            }
             
   
 });
@@ -754,6 +937,12 @@ app.get('/doctor_view_appointments',(req,res)=>{
     {
         conn.getConnection(
             function (err, client){
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
 
                 var sql=`Select p.FirstName,p.LastName,d.name as Doctor,date, time from patient p,doctor d, hospital h,appointment a where d.did = ${current_doctor} and a.did = d.did and a.email = p.email and a.hid =h.hid`;
                 client.query(sql, function(err, rows) {
@@ -766,6 +955,7 @@ app.get('/doctor_view_appointments',(req,res)=>{
                     });
                 }
             });
+            }
             });
     }
 
@@ -773,7 +963,7 @@ app.get('/doctor_view_appointments',(req,res)=>{
 
 
     
-});
+
 
 
 
@@ -786,6 +976,12 @@ app.get('/admin_login',(req,res)=>{
 app.post('/admin_page',(req,res)=>{
   conn.getConnection(
             function (err, client) {
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 console.log(req.body.id);
                 var sql=`Select password from admin where id = ${req.body.id}`;
                 console.log(sql);
@@ -803,6 +999,7 @@ app.post('/admin_page',(req,res)=>{
                   
                     client.release();
                 });
+            }
 
                     // Don't use the connection here, it has been returned to the pool.
                 });
@@ -815,7 +1012,12 @@ app.post('/hospitalsAdded',(req,res)=>{
 
   conn.getConnection(
             function (err, client){
-
+if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
                 var sql=`Insert into hospital values(${req.body.hid},"${req.body.name}","${req.body.address}","${req.body.type}",${req.body.Contact},"${req.body.password}")`;
                 client.query(sql, function(err, rows) {
                 if(err )
@@ -825,6 +1027,7 @@ app.post('/hospitalsAdded',(req,res)=>{
                     res.render("admin/admin_page.hbs");
                 }
             });
+            }
             });
 });
 
@@ -832,6 +1035,12 @@ app.get('/admin_remove_hospital',(req,res)=>{
 
 conn.getConnection(
             function (err, client){
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
 
                 var sql=`Select * from hospital`;
                 client.query(sql, function(err, rows) {
@@ -844,6 +1053,7 @@ conn.getConnection(
                     });
                 }
             });
+            }
             });
 
     
@@ -853,6 +1063,12 @@ app.post('/confirm_hospital_removal',(req,res)=>{
 
 conn.getConnection(
             function (err, client){
+                if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
 
                 var sql=`Delete from hospital where hid = ${req.body.hospital}`;
                 client.query(sql, function(err, rows) {
@@ -865,6 +1081,7 @@ conn.getConnection(
                     });
                 }
             });
+            }
             });
 });
 
