@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HospitalAppointment</title>
+</head>
+<body>
+<form action="/profile_updated" method="post">
+ First name:<br>
+  <input type="text" name="firstname" value="{{details.FirstName}}" ><br>
+  Last name:<br>
+  <input type="text" name="lastname" value="{{details.LastName}}"><br>
+  Age:<br>
+  <input type="text" name="age" value="{{details.age}}" ><br>
+  Address:<br>
+  <input type="text" name="address" value="{{details.Address}}"><br>
+  contact Number:<br>
+  <input type="number" name="number" value="{{details.contact}}"><br>
+  <input type="submit" value="Update Profile">
+</form>
+</body>
+</html>

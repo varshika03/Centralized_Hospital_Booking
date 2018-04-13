@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HospitalAppointment</title>
+</head>
+<body>
+<table>
+<tr>
+<th>Patient's First Name</th>
+<th>Patient's Last Name</th>
+<th>Doctors's Name</th>
+<th>Date</th>
+<th>Time</th>
+</tr>
+{{#each appointments}}
+<tr>
+<td>{{FirstName}}</td>
+<td>{{LastName}}</td>
+<td>{{Doctor}}</td>
+<td>{{date}}</td>
+<td>{{time}}</td>
+</tr>
+{{/each}}
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HospitalAppointment</title>
+</head>
+<body>
+<form method ="post" action ="/date_time">
+<table>
+<tr>
+<th>Name</th>
+<th>Department</th>
+<th>Fee</th>
+<th>Select</th>
+</tr>
+{{#each details}}
+<tr>
+<td>{{doctor}}</td>
+<td>{{department}}</td>
+<td>{{fee}}</td>
+<td><button name="doctor" value="{{did}}" type="submit">SELECT</button></td>
+</tr>
+{{/each}}
+</table>
+</form>
+</body>
+
+</html>

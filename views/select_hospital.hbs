@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HospitalAppointment</title>
+</head>
+<body>
+<form method ="post" action ="/select_doctor">
+<select name ="hospital">
+{{#each dropdown}}
+<option value ="{{name}}">{{name}}</option>
+{{/each}}
+</select>
+<button type="submit">NEXT</button>
+</form>
+</body>
+
+</html>
