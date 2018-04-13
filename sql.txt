@@ -1,0 +1,102 @@
+insert into hospital values(1,"Sunrise Hospital","Kirti Nagar","private","26023456");
+insert into hospital values(2,"SafdarJung Hospital","Safdarjung Campus, Ansari Nagar West, New Delhi, Delhi 110029","govt","8585764321");
+insert into hospital values(3,"Pt. Madan Mohan Malaviya Hospital"," Hospital Marg, Malviya Nagar, New Delhi, Delhi 110017","govt","26123457");
+insert into hospital values(4,"Aakash Hospital"," 90/43, Malviya Nagar Rd, Malviya Nagar, New Delhi, Delhi 110017","private","9811234567");
+insert into hospital values(5,"Max Super Speciality Hospital, Patparganj","108A, IP Ext, I.P.Extension, Patparganj, Delhi, 110092","private","24104565");
+
+
+Insert into department values(1,"Allergist");
+Insert into department values(2,"Anaesthesiologist");
+Insert into department values(3,"Andrologist");
+Insert into department values(4,"Cardiologist");
+Insert into department values(5,"Cardiac Electrophysiologist");
+Insert into department values(6, "Dermatologist");
+Insert into department values(7, "Emergency Medicine / Emergency (ER) Doctors");
+Insert into department values(8, "Epidemiologist");
+Insert into department values(9, "Family medicene Physician");
+Insert into department values(10, "Endocrinologist");
+Insert into department values(11, "Gastroenterologist");
+Insert into department values(12, "Geriatrician");
+Insert into department values(13, "Hepatologist");
+Insert into department values(14, "Immunologist");
+Insert into department values(15, "Infectious Disease Specialist");
+Insert into department values(16, "Internal Medicine Specialist");
+Insert into department values(17, "Maxillofacial Surgeon / Oral Surgeon");
+Insert into department values(18, "Neurologist");
+Insert into department values(19, "Neurosurgeon");
+Insert into department values(20,"Oncologist");
+Insert into department values(21 ,"Ophthalmologist");
+Insert into department values(22 ,"Orthopedic Surgeon / Orthopedist");
+Insert into department values(23,"Pediatrician");
+Insert into department values(24, "Physiatrist");
+Insert into department values(25,"Psychiatrist");
+Insert into department values(26,"Sleep Doctor / Sleep Disorders Specialist");
+Insert into department values(27,"Spinal Cord Injury Specialist");
+Insert into department values(28,"Surgeon");
+Insert into department values(29,"Veterinarian");
+Insert into department values(30,"Diagnostician");
+Insert into department values(31,"Microbiologist");
+Insert into department values(32,"Pharmacist");
+Insert into department values(33,"Physiotherapist");
+
+
+
+Insert into doctor values(1,"Sanjeev Tripathi",2,700,1);
+Insert into doctor values(2,"Rahul Sharma",22,620,1);
+Insert into doctor values(3,"Jagjit Batra",12,1500,1);
+Insert into doctor values(4,"Sohan Mailk",17,950,1);
+Insert into doctor values(5,"Ritika Chawla",4,2800,1);
+Insert into doctor values(6,"Deepak Chopra",7,500,1);
+Insert into doctor values(7,"A.K patel",17,1700,1);
+Insert into doctor values(8,"Arwind Gokhale",31,800,1);
+Insert into doctor values(9,"Aditi Roy",23,950,1);
+Insert into doctor values(10,"Randeep Guleria",42,1500,1);
+
+Insert into doctor values(11,"Saksham Aggarwal",19,1200,2);
+Insert into doctor values(12,"Anand Gopal",14,700,2);
+Insert into doctor values(13,"Satendra Singh",2,700,2);
+Insert into doctor values(14,"Kamini Rao",29,620,2);
+Insert into doctor values(15,"Vikram Shah",12,1500,2);
+Insert into doctor values(16,"Indira Handuja",18,950,2);
+Insert into doctor values(17,"Subrat Kumar",4,2800,2);
+Insert into doctor values(18,"Deepak Chopra",7,500,2);
+Insert into doctor values(19,"Ramit Banerjee",17,1700,2);
+Insert into doctor values(20,"Shubham Chopra",31,800,2);
+
+Insert into doctor values(21,"Jitendra Sharma",20,1200,3);
+Insert into doctor values(22,"Anoop Misra",14,700,3);
+Insert into doctor values(23,"Atul Kumar",2,700,3);
+Insert into doctor values(24,"Balram Bhargav",29,620,3);
+Insert into doctor values(25,"Ravinder Batra",11,1500,3);
+Insert into doctor values(26,"Jyotsna Punj",18,950,3);
+Insert into doctor values(27,"Puneet Khanna",4,2800,3);
+Insert into doctor values(28,"Ajeet Kumar",9,500,3);
+Insert into doctor values(29,"Rima Dada",16,1700,3);
+Insert into doctor values(30,"Seema Singh",33,800,3);
+
+Insert into doctor values(31,"Pushpa Dhar",20,1200,4);
+Insert into doctor values(32,"Subrata Basuray",14,700,4);
+Insert into doctor values(33,"Tony Jacob",1,700,4);
+Insert into doctor values(34,"Saroj Kaler",29,620,4);
+Insert into doctor values(35,"Ravinder Batra",21,1500,4);
+Insert into doctor values(36,"subhash Yadav",18,950,4);
+Insert into doctor values(37,"Shyam chauhan",7,2800,4);
+Insert into doctor values(38,"Pragyan Acharya",15,500,4);
+Insert into doctor values(39,"Archana Singh",16,1700,4);
+Insert into doctor values(40,"Savita Sharma",30,800,4);
+
+Insert into doctor values(41,"Anushree Gupta",20,1200,5);
+Insert into doctor values(42,"J.S tyagi",19,700,5);
+Insert into doctor values(43,"V. Sreenivas",2,700,5);
+Insert into doctor values(44,"Maroof Ahmad",29,620,5);
+Insert into doctor values(45,"Hari Prasad",11,1500,5);
+Insert into doctor values(46,"Krishna Dalal",10,950,5);
+Insert into doctor values(47,"Sujata Dagar",4,2800,5);
+Insert into doctor values(48,"Apnana Goel",9,500,5);
+Insert into doctor values(49,"Srishti Luthra",12,1700,5);
+Insert into doctor values(50,"Sudip Sen",33,800,5);
+
+
+
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HospitalAppointment</title>
+</head>
+<body>
+<form method="post" action="/confirm_doctor_removal">
+<h2>Select the doctor to be removed</h2>
+<table>
+<tr>
+<th>Name</th>
+<th>Department</th>
+<th>Fee</th>
+<th>Select</th>
+</tr>
+{{#each details}}
+<tr>
+<td>{{doctor}}</td>
+<td>{{department}}</td>
+<td>{{fee}}</td>
+<td><button name="doctor" value="{{did}}" type="submit">SELECT</button></td>
+</tr>
+{{/each}}
+</table>
+
+</body>
+
+</html>
