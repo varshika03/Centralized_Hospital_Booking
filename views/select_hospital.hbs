@@ -2,16 +2,21 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/set_appointment.css">
 </head>
 <body>
+{{>header}}
+<div class="center2">
+<b><h1 style="padding-left: 1%;margin-bottom: 1%;">SELECT THE HOSPITAL</h1></b>
 <form method ="post" action ="/select_doctor">
 <select name ="hospital">
 {{#each dropdown}}
 <option value ="{{name}}">{{name}}</option>
 {{/each}}
-</select>
-<button type="submit">NEXT</button>
+</select><br>
+<button type="submit" class="next">NEXT</button>
 </form>
+</div>
 </body>
 
 </html>

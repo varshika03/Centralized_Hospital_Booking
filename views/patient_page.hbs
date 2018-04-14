@@ -2,12 +2,17 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/page.css"  >
 </head>
 <body>
-<h2><a href = "/hospital_type">Set new Appointment</a></h2>
-<h2><a href = "/update_profile">Edit Profile</a></h2>
-<h2><a href = "/update_password">Update Password</a></h2>
-<h2><a href = "/view_appointments">View Appointments</a></h2>
-<h2><a href = "/">Logout</a></h2>
+{{>header}}
+<div class="page">
+<h1>PATIENT PAGE</h1>
+<h2><a href = "/hospital_type" class="btn btn-primary btn-block btn-large">Set new Appointment</a></h2>
+<h2><a href = "/update_profile" class="btn btn-primary btn-block btn-large">Edit Profile</a></h2>
+<h2><a href = "/update_password" class="btn btn-primary btn-block btn-large">Update Password</a></h2>
+<h2><a href = "/view_appointments" class="btn btn-primary btn-block btn-large">View Appointments</a></h2>
+<h2><a href = "/" class="btn btn-primary btn-block btn-large">Logout</a></h2>
+</div>
 </body>
 </html>

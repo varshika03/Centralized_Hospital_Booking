@@ -2,11 +2,16 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/set_appointment.css">
 </head>
 <body>
+{{>header}}
+<div class="center">
+<b><h1>SELECT THE TYPE OF HOSPITAL</h1></b>
 <form method ="post" action ="/select_hospital">
-<button type ="submit" name="type" value="govt">Government</button>
+<button type ="submit" name="type" value="govt">Government</button><br>
 <button type ="submit" name="type" value="private">Private</button>
 </form>
+</div>
 </body>
 </html>

@@ -2,15 +2,20 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/page.css"  >
 </head>
 <body>
-<h2><a href = "/view_profile">View Profile</a></h2>
-<h2><a href = "/update_hospital_profile">Edit Profile</a></h2>
-<h2><a href = "/update_hospital_password">Update Password</a></h2>
-<h2><a href = "/hospital_view_appointments">View Appointments</a></h2>
-<h2><a href = "/hospital_view_doctors">View Doctors</a></h2>
-<h2><a href = "/hospital_add_doctors">Add doctors</a></h2>
-<h2><a href = "/hospital_remove_doctors">Remove doctors</a></h2>
-<h2><a href = "/">Logout</a></h2>
+{{>header}}
+<div class="page">
+<h1>HOSPITAL PAGE</h1>
+<h2><a href = "/view_profile" class="btn btn-primary btn-block btn-large">View Profile</a></h2>
+<h2><a href = "/update_hospital_profile" class="btn btn-primary btn-block btn-large">Edit Profile</a></h2>
+<h2><a href = "/update_hospital_password" class="btn btn-primary btn-block btn-large">Update Password</a></h2>
+<h2><a href = "/hospital_view_appointments" class="btn btn-primary btn-block btn-large">View Appointments</a></h2>
+<h2><a href = "/hospital_view_doctors" class="btn btn-primary btn-block btn-large">View Doctors</a></h2>
+<h2><a href = "/hospital_add_doctors" class="btn btn-primary btn-block btn-large">Add doctors</a></h2>
+<h2><a href = "/hospital_remove_doctors" class="btn btn-primary btn-block btn-large">Remove doctors</a></h2>
+<h2><a href = "/" class="btn btn-primary btn-block btn-large">Logout</a></h2>
+</div>
 </body>
 </html>

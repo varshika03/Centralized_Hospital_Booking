@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HospitalAppointment</title>
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="trial.css"  />
 </head>
 <body>
-<form method="post" action="/confirm_doctor_removal">
-<h2>Select the doctor to be removed</h2>
-<table>
-<tr>
-<th>Name</th>
-<th>Department</th>
-<th>Fee</th>
-<th>Select</th>
-</tr>
-{{#each details}}
-<tr>
-<td>{{doctor}}</td>
-<td>{{department}}</td>
-<td>{{fee}}</td>
-<td><button name="doctor" value="{{did}}" type="submit">SELECT</button></td>
-</tr>
-{{/each}}
-</table>
-
+{{>header}}
+<div class="login">
+<h1>DOCTOR LOGIN</h1>
+<form action="/doctor_page" method="post">
+ Doctor_id:
+  <input type="number" name="id"><br>
+  Password:
+  <input type="password" name="password" ><br>
+  <input type="submit" value="Login" class="btn btn-primary btn-block btn-large">
+</form>
+</div>
 </body>
-
 </html>
+
+
+	

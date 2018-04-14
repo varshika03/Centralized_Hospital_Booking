@@ -1,0 +1,115 @@
+body{
+	background: url("resources/background2.jpg");
+	    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    padding-bottom: 100px;
+    width: 100%;
+	height:100%;
+	overflow-y: scroll; overflow-x: hidden;
+	font-family: 'Open Sans', sans-serif;
+	color: #263238;
+}
+.center
+{
+	margin-left: 35%;
+	margin-right: auto;
+	margin-top: 15%;
+	margin-bottom: auto;
+}
+.center2
+{
+	margin-left: 20%;
+	margin-right: auto;
+	margin-top: 15%;
+	margin-bottom: auto;
+}
+
+html { width: 100%; height:100%;  }
+
+button{
+	background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border: 2px solid gainsboro;
+	font-size: 30px;
+	color: gainsboro;
+	font-weight: bold;
+	padding: 3%;
+	min-width: 400px;
+	-webkit-box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+margin: 2%;
+}
+button:hover {
+	padding: 3%;
+	background: black;
+	border: 2px solid gainsboro;
+	font-size: 30px;
+	color: gainsboro;
+	font-weight: bold;
+	min-width: 400px;
+	-webkit-box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+margin: 2%;
+}
+
+select{
+		background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border: 2px solid gainsboro;
+	font-size: 30px;
+	color: gainsboro;
+	font-weight: bold;
+	padding: 3%;
+	min-width: 400px;
+	-webkit-box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+margin: 2%;
+}
+
+select option
+{
+		background-color: #696969;  /* fallback for old browsers */
+	color: gainsboro;
+	
+}
+option:hover
+{
+		background-color: black;  /* fallback for old browsers */
+	color: gainsboro;
+	
+}
+
+.next{
+	background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border: 2px solid gainsboro;
+	font-size: 25px;
+	color: gainsboro;
+	font-weight: bold;
+	padding: 2%;
+	min-width: 200px;
+	-webkit-box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+margin: 2%;
+}
+.next:hover {
+	padding: 2%;
+	background: black;
+	border: 2px solid gainsboro;
+	font-size: 25px;
+	color: gainsboro;
+	font-weight: bold;
+	min-width: 200px;
+	-webkit-box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+margin: 2%;
+}

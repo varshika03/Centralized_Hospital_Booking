@@ -1,6 +1,7 @@
-const express = require('express')
-const hbs = require('hbs')
-var bodyParser = require('body-parser')
+const express = require('express');
+const hbs = require('hbs');
+var bodyParser = require('body-parser');
+const path = require('path');
 
 var current_id="";
 var current_hospital=-1;
@@ -17,9 +18,11 @@ var current_appointment={
     time:""
 };
 
+hbs.registerPartials(__dirname+'/views/partials');
 const port =process.env.PORT || 3000;
 var app = express();
-
+const publicPath = path.join(__dirname, '/views');
+app.use('/', express.static(publicPath));
   app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json

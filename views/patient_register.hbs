@@ -2,30 +2,37 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/login.css"  >
 </head>
-<body>
-<form action="/patient_registered" method="post">
- First name:<br>
+<body >
+{{>header}}
+<div class="login">
+<h1>PATIENT REGISTER</h1>
+<form action="/patient_registered" method="post" style="margin-bottom: 10%;">
+ <b>First name:</b><br>
   <input type="text" name="firstname" required><br>
-  Last name:<br>
+  <b>Last name:</b><br>
   <input type="text" name="lastname"><br>
-  Age:<br>
+  <b>Age:</b><br>
   <input type="text" name="age" required><br>
-  Gender:<br>
-     <input type="radio" name="gender" value='m' checked> Male<br>
-  <input type="radio" name="gender" value='f'> Female<br>
-  <input type="radio" name="gender" value='o'> Other<br>
- BirthDate:<br>
+ <b> Gender:</b><br>
+     <select name="gender">
+       <option value="m">Male</option>
+       <option value="f">Female</option>
+       <option value="o">Others</option>
+     </select>
+ <b>BirthDate:</b><br>
   <input type="date" name="BirthDate"><br>
-  Address:<br>
+ <b> Address:</b><br>
   <input type="text" name="address"><br>
-  email:<br>
+  <b>email:</b><br>
   <input type="email" name="email" required><br>
-  Contact Number:<br>
+  <b>Contact Number:</b><br>
   <input type="number" name="number" required><br>
-   Password:<br>
+   <b>Password:</b><br>
  <input type="password" name="password" required>
-  <input type="submit" value="OK">
+  <input type="submit" value="Register" class="btn btn-primary btn-block btn-large">
 </form>
+</div>
 </body>
 </html>

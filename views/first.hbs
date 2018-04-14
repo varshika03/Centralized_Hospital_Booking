@@ -2,11 +2,40 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/first.css"  >
 </head>
 <body>
-<h1><a href ='/patient'>Patient</a></h1>
-<h1><a href ='/hospital_login'>Hospital Login</a></h1>
-<h1><a href ='/doctor_login'>Doctor Login</a></h1>
-<h1><a href ='/admin_login'>Admin</a></h1>
+<div>
+{{>header}}
+<div  style="height:70%;width: 100%;margin-top: 10%;margin-bottom: 10%  ;position: absolute;">
+ <img class="my" src="/css/resources/medical1.jpg" style="width:100%;height: 100%;object-fit: cover;">
+<img class="my" src="/css/resources/medical2.jpg" style="width:100%;object-fit: cover;height: 100%;">
+<img class="my" src="/css/resources/medical3.jpg" style="width:100%;object-fit: cover;height: 100%;">
+<img class="my" src="/css/resources/medical4.jpg" style="width:100%;object-fit: cover;height: 100%;">
+</div>
+</div>
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("my");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+<div class="page">
+<h1><a href ='/patient' class="btn btn-primary btn-block btn-large">Patient</a></h1>
+<h1><a href ='/hospital_login' class="btn btn-primary btn-block btn-large">Hospital Login</a></h1>
+<h1><a href ='/doctor_login' class="btn btn-primary btn-block btn-large">Doctor Login</a></h1>
+<h1><a href ='/admin_login' class="btn btn-primary btn-block btn-large">Admin</a></h1>
+</div>
+{{>footer}}
 </body>
 </html>

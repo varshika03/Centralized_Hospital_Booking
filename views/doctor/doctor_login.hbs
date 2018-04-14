@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login</title>
+<title>Hospital_Appointment</title>
+<link rel="stylesheet" type="text/css" href="/css/login.css"  >
 </head>
 <body>
+{{>header}}
+<div class="login">
+<h1>DOCTOR LOGIN</h1>
 <form action="/doctor_page" method="post">
- Doctor_id:
+ <b>Doctor_id:</b>
   <input type="number" name="id"><br>
-  Password:
-  <input type="password" name="password"><br>
-  <input type="submit" value="Login">
+  <b>Password:</b>
+  <input type="password" name="password" ><br>
+  <input type="submit" value="Login" class="btn btn-primary btn-block btn-large">
 </form>
+</div>
 </body>
 </html>
+
+
+	

@@ -2,10 +2,15 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/page.css"  >
 </head>
 <body>
-<h2><a href = "/admin_add_hospital">Admin Add Hospital</a></h2>
-<h2><a href = "/admin_remove_hospital">Admin Remove Hospital</a></h2>
-<h2><a href = "/">Logout</a></h2>
+{{>header}}
+<div class="page">
+<h1>ADMIN PAGE</h1>
+<h2><a href = "/admin_add_hospital" class="btn btn-primary btn-block btn-large">Add Hospital</a></h2>
+<h2><a href = "/admin_remove_hospital" class="btn btn-primary btn-block btn-large">Remove Hospital</a></h2>
+<h2><a href = "/" class="btn btn-primary btn-block btn-large">Logout</a></h2>
+</div>
 </body>
 </html>

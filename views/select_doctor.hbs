@@ -2,22 +2,29 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/doctor_table.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+{{>header}}
+<br>
+<h1><b>SELECT THE DOCTOR</b></h1>
 <form method ="post" action ="/date_time">
-<table>
+<table id="table">
 <tr>
 <th>Name</th>
 <th>Department</th>
 <th>Fee</th>
-<th>Select</th>
+<th id="select">Select</th>
 </tr>
 {{#each details}}
 <tr>
 <td>{{doctor}}</td>
 <td>{{department}}</td>
 <td>{{fee}}</td>
-<td><button name="doctor" value="{{did}}" type="submit">SELECT</button></td>
+<td id="select"><button name="doctor" value="{{did}}" type="submit"> <span class="glyphicon glyphicon-ok"></span></button></td>
 </tr>
 {{/each}}
 </table>

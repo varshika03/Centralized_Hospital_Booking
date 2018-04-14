@@ -2,14 +2,19 @@
 <html>
 <head>
 <title>Login</title>
+<link rel="stylesheet" type="text/css" href="/css/login.css"  >
 </head>
 <body>
+{{>header}}
+<div class="login">
+<h1>HOSPITAL LOGIN</h1>
 <form action="/hospital_page" method="post">
- Hospital_id:
+ <b>Hospital_id:</b>
   <input type="number" name="id"><br>
-  Password:
+  <b>Password:</b>
   <input type="password" name="password"><br>
-  <input type="submit" value="Login">
+  <input type="submit" value="Login" class="btn btn-primary btn-block btn-large">
 </form>
+</div>
 </body>
 </html>
