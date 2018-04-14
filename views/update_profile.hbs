@@ -2,20 +2,25 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/set_appointment.css">
 </head>
 <body>
+{{>header}}
+<div class="center">
+<h1>EDIT PROFILE</h1>
 <form action="/profile_updated" method="post">
- First name:<br>
+ <b>First name:</b><br>
   <input type="text" name="firstname" value="{{details.FirstName}}" ><br>
-  Last name:<br>
+  <b>Last name:</b><br>
   <input type="text" name="lastname" value="{{details.LastName}}"><br>
-  Age:<br>
+  <b>Age:</b><br>
   <input type="text" name="age" value="{{details.age}}" ><br>
-  Address:<br>
+  <b>Address:</b><br>
   <input type="text" name="address" value="{{details.Address}}"><br>
-  contact Number:<br>
+  <b>contact Number:</b><br>
   <input type="number" name="number" value="{{details.contact}}"><br>
-  <input type="submit" value="Update Profile">
+  <input type="submit" value="Update Profile" class="next">
+  </form>
 </form>
 </body>
 </html>

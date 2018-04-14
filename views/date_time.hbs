@@ -2,15 +2,20 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/set_appointment.css">
 </head>
 <body>
+{{>header}}
+<div class="center">
+<h1><b>SELECT DATE AND TIME</b></h1>
 <form method ="post" action ="/receipt">
-Date:
+<b>Date:</b>
 <input type ="date" name="date"><br>
-Time:
-<input type="time" name="time">
+<b>Time:</b>
+<input type="time" name="time"><br>
 <button type ="submit">Book Appointment </button>
 </form>
+</div>
 </body>
 
 </html>

@@ -240,7 +240,8 @@ app.post('/receipt',(req,res)=>{
         }
         else
         {
-                var sql=`Insert into appointment values("${current_id}",${current_appointment.did},${current_appointment.hid},"${current_appointment.date}","${current_appointment.time}","${current_id}")`;
+                var sql=`Insert into appointment values("${current_id}",${current_appointment.did},${current_appointment.hid},"${current_appointment.date}","${current_appointment.time}")`;
+                console.log(sql);
                 client.query(sql, function(err, rows) {
                     if(err)
                         res.send(err);

@@ -2,15 +2,37 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/receipt.css">
 </head>
 <body>
-<h2>Person Name :{{receipt.Patient_first}}  {{receipt.Patient_last}}</h2>
-<h2>Doctor Name :{{receipt.dname}} </h2>
-<h2>Hospital Name :{{receipt.hname}} </h2>
-<h2>Date: {{receipt.date}}</h2>
-<h2>Time :{{receipt.time}}</h2>
+{{>header}}
+<div class="center">
+<h1>RECEIPT</h1>
+<table id="table">
+<tr>
+<td id="first">Person Name </td>
+<td>{{receipt.Patient_first}}  {{receipt.Patient_last}}</td>
+</tr>
+<tr>
+<td id="first">Doctor Name</td>
+<td>{{receipt.dname}} </td>
+</tr>
+<tr>
+<td id="first">Hospital Name</td>
+<td>{{receipt.hname}} </td>
+</tr>
+<tr>
+<td id="first">Date</td>
+<td> {{receipt.date}}</td>
+</tr>
+<tr>
+<td id="first">Time</td>
+<td>{{receipt.time}}</td>
+</tr>
+</table>
 <button><a href='/patient_page'>Back to home page</a></button>
-
+	
+</div>
 
 </body>
 </html>
