@@ -17,6 +17,20 @@ header,footer
 	color: #008b8b;
 	float: right;
 }
+h3 a:link{
+	color: #008b8b;
+	text-decoration: none;
+}
+h3 a:visited
+{
+	color: #008b8b;
+	text-decoration: none;
+}
+h3 a:hover
+{
+	color: #008b8b;
+	text-decoration: underline;
+}
 body{overflow-x: hidden;overflow-y: scroll;}
 
 body { 

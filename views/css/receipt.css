@@ -78,3 +78,18 @@ a:hover{
 	text-decoration: underline;
 	color: white;
 }
+
+h3 a:link{
+	color: #263238;
+	text-decoration: none;
+}
+h3 a:visited
+{
+	color: #263238;
+	text-decoration: none;
+}
+h3 a:hover
+{
+	color: #263238;
+	text-decoration: underline;
+}

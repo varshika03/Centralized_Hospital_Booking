@@ -12,9 +12,19 @@
 * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
 
 html { width: 100%; height:100%;  }
-header
+h3 a:link{
+	color: #008b8b;
+	text-decoration: none;
+}
+h3 a:visited
 {
 	color: #008b8b;
+	text-decoration: none;
+}
+h3 a:hover
+{
+	color: #008b8b;
+	text-decoration: underline;
 }
 body{overflow-y: scroll; overflow-x: hidden;}
 
