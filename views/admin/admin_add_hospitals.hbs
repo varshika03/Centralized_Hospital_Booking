@@ -2,23 +2,30 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/set_appointment.css">
 </head>
 <body>
+{{>header}}
+<div class="center">
+<h1>ADD HOSPITAL</h1>
 <form action="/hospitalsAdded" method="post">
- hid:<br>
+ <b>id:</b><br>
   <input type="number" name="hid"><br>
-  Name:<br>
+  <b>Name:</b><br>
   <input type="text" name="name"><br>
-  Address:<br>
+ <b> Address:</b><br>
   <input type="text" name="address"><br>
-   Type:<br>
-  Government:<input type="radio" name="type" value="govt"><br>
-  Private:<input type="radio" name="type" value="private"><br>
-  Contact Number<br>
+   <b>Type:</b><br>
+   <select name="type" class="select_form">
+   <option value="govt">Government</option>
+   <option value="private">Private</option>
+  </select><br>
+  <b>Contact Number</b><br>
   <input type="number" name="Contact"><br>
- Temporary Password:<br>
+ <b>Temporary Password:</b><br>
   <input type="text" name="password"><br>
-  <input type="submit" value="Add Hospital">
+  <input type="submit" value="Add Hospital" class="next">
 </form>
+</div>
 </body>
 </html>

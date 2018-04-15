@@ -133,3 +133,32 @@ margin: 2%;
 box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
 margin: 2%;
 }
+
+.select_form{
+		background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border: 1px solid gainsboro;
+	font-size: 15px;
+	color: gainsboro;
+	font-weight: bold;
+	padding: 1%;
+	min-width: 100px;
+	-webkit-box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
+margin: 2% 0% 2% 0%;
+}
+
+select option
+{
+		background-color: #696969;  /* fallback for old browsers */
+	color: gainsboro;
+	
+}
+option:hover
+{
+		background-color: black;  /* fallback for old browsers */
+	color: gainsboro;
+	
+}

@@ -2,12 +2,17 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/set_appointment.css">
 </head>
 <body>
+{{>header}}
+<div class="center">
+<h1>UPDATE FEE</h1>
 <form action="/doctor_fee_updated" method="post">
-  Fee:<br>
+  <b>Fee</b><br>
   <input type="number" name="fee" value="{{details.fee}}"><br>
-  <input type="submit" value="Update Fee">
+  <input type="submit" value="Update Fee" class="next">
 </form>
+</div>
 </body>
 </html>

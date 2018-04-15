@@ -588,7 +588,7 @@ app.get('/hospital_view_appointments',(req,res)=>{
         else
         {
 
-                var sql=`Select p.FirstName,p.LastName,d.name as Doctor,date, time from patient p,doctor d, hospital h,appointment a where a.hid = ${current_hospital} and a.did = d.did and a.email = p.email and h.hid = ${current_hospital}`;
+                var sql=`Select p.FirstName,p.LastName,d.name as Doctor,date, time from patient p,doctor d, hospital h,appointment a where a.hid = ${current_hospital} and a.did = d.did and a.patient_id = p.email and h.hid = ${current_hospital}`;
                 client.query(sql, function(err, rows) {
                 if(err )
                     console.log(err);
@@ -948,7 +948,7 @@ app.get('/doctor_view_appointments',(req,res)=>{
         else
         {
 
-                var sql=`Select p.FirstName,p.LastName,d.name as Doctor,date, time from patient p,doctor d, hospital h,appointment a where d.did = ${current_doctor} and a.did = d.did and a.email = p.email and a.hid =h.hid`;
+                var sql=`Select p.FirstName,p.LastName,d.name as Doctor,date, time from patient p,doctor d, hospital h,appointment a where d.did = ${current_doctor} and a.did = d.did and a.patient_id = p.email and a.hid =h.hid`;
                 client.query(sql, function(err, rows) {
                 if(err )
                     console.log(err);

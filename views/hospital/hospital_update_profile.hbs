@@ -2,18 +2,23 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/set_appointment.css">
 </head>
 <body>
+{{>header}}
+<div class="center">
+<h1>EDIT PROFILE</h1>
 <form action="/hospital_profile_updated" method="post">
-Name:
+<b>Name:</b><br>
   <input type="text" name="name" value="{{details.name}}"><br>
-Address:<br>
+<b>Address:</b><br>
   <input type="text" name="address" value="{{details.address}}" ><br>
-  Type:<br>
+  <b>Type:</b><br>
   <input type="text" name="type" value="{{details.type}}"><br>
-  Contact Number:<br>
+  <b>Contact Number:</b><br>
   <input type="number" name="Contact" value="{{details.Contact}}"><br>
-  <input type="submit" value="Update Profile">
+  <input type="submit" value="Update Profile" class="next">
 </form>
+</div>
 </body>
 </html>

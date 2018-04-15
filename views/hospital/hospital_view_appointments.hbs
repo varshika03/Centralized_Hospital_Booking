@@ -2,9 +2,13 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/doctor_table.css">
 </head>
 <body>
-<table>
+{{>header}}
+<div class="center2">
+<h1><b>APPOINTMENTS</b></h1>
+<table id="t">
 <tr>
 <th>Patient's First Name</th>
 <th>Patient's Last Name</th>
@@ -23,5 +27,6 @@
 {{/each}}
 </table>
 </form>
+</div>
 </body>
 </html>

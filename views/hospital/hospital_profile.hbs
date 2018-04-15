@@ -2,13 +2,35 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/receipt.css">
 </head>
 <body>
-<h2> HID :{{details.hid}}</h2>
-<h2> Name :{{details.name}}</h2>
-<h2>Address : {{details.address}}</h2>
-<h2>Type: {{details.type}}</h2>
-<h2>Contact: {{details.Contact}}</h2>
-<a href ='/hospital_page'>Go Back</a>
+{{>header}}
+<div class="center">
+<h1>PROFILE</h1>
+<table id="table">
+<tr>
+<td id="first">ID</td>
+<td>{{details.hid}}</td>
+</tr>
+<tr>
+<td id="first"> Name</td>
+<td>{{details.name}}</td>
+</tr>
+<tr>
+<td id="first">Address</td>
+<td>{{details.address}}</td>
+</tr>
+<tr>
+<td id="first">Type</td>
+<td>{{details.type}}</td>
+</tr>
+<tr>
+<td id="first">Contact</td>
+<td>{{details.Contact}}</td>
+</tr>
+</table>
+<button><a href ='/hospital_page' >Go Back</a></button>
+</div>
 </body>
 </html>

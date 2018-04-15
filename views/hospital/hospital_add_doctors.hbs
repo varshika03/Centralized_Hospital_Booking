@@ -2,25 +2,30 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/set_appointment.css">
 </head>
 <body>
+{{>header}}
+<div class="center">
+<h1>ADD DOCTOR</h1>
 <form action="/doctorsAdded" method="post">
- did:<br>
+ <b>id:</b><br>
   <input type="number" name="did"><br>
-  Name:<br>
+  <b>Name:</b><br>
   <input type="text" name="name"><br>
-  Department:<br>
-  <select name ="department">
+  <b>Department:</b><br>
+  <select name ="department" class="select_form">
 {{#each dropdown}}
-<option value ="{{id}}">{{id}} {{name}}</option>
+<option value ="{{id}}">{{id}}. {{name}}</option>
 {{/each}}
 </select>
 <br>
-  Fee:<br>
+  <b>Fee:</b><br>
   <input type=number name="fee"><br>
- Temporary Password:<br>
+<b> Temporary Password:</b><br>
   <input type="text" name="password"><br>
-  <input type="submit" value="Add doctor">
+  <input type="submit" value="Add doctor" class="next">
 </form>
+</div>
 </body>
 </html>

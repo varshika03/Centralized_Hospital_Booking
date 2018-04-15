@@ -2,17 +2,21 @@
 <html>
 <head>
 <title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/doctor_table.css">
 </head>
 <body>
+{{>header}}
+<br>
+
 <form method="post" action="/confirm_hospital_removal">
 <h2>Select the hospital to be removed</h2>
-<table>
+<table id="table">
 <tr>
 <th>Name</th>
 <th>Address</th>
 <th>Type</th>
 <th>Contact Number</th>
-<th>Select</th>
+<th id="select">Select</th>
 </tr>
 {{#each details}}
 <tr>
@@ -24,6 +28,7 @@
 </tr>
 {{/each}}
 </table>
+</form>
 </body>
 
 </html>

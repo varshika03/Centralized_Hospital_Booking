@@ -69,10 +69,10 @@ box-shadow: 9px 7px 54px 3px rgba(0,0,0,0.75);
 
 a:link{
 	text-decoration: none;
-	color: black;
+	color: gainsboro;
 }
 a:visited{
-	color: black;
+	color: gainsboro;
 }
 a:hover{
 	text-decoration: underline;
