@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HospitalAppointment</title>
+<link rel="stylesheet" type="text/css" href="/css/doctor_table.css">
+</head>
+<body>
+{{>header}}
+<h1><b> LIST OF HOSPITALS</b></h1>
+<table id="table">
+<tr>
+<th>Hospital Id</th>
+<th>Hospital's name</th>
+<th>Address</th>
+<th>Type</th>
+<th>Contact</th>
+</tr>
+{{#each hospitals}}
+<tr>
+<td>{{hid}}</td>
+<td>{{name}}</td>
+<td>{{address}}</td>
+<td>{{type}}</td>
+<td>{{Contact}}</td>
+</tr>
+{{/each}}
+</table>
+</form>
+</body>
+</html>

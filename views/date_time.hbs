@@ -9,13 +9,44 @@
 <div class="center">
 <h1><b>SELECT DATE AND TIME</b></h1>
 <form method ="post" action ="/receipt">
-<b>Date:</b>
-<input type ="date" name="date"><br>
-<b>Time:</b>
-<input type="time" name="time"><br>
+<b>Date:</b><br>
+<h5>*Can book for upto 6 months in advance</h5>
+<input type ="date" name="date" id="datefield" required><br>
+<b>Time:</b><br>
+<h5> (Appointment time between 8:00 and 14:00)</h5>
+<input type="time" name="time" min="08:00" max="14:00" required><br>
 <button type ="submit">Book Appointment </button>
 </form>
 </div>
+<script>
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("datefield").setAttribute("min", today);
+var maxdate=new Date();
+maxdate.setMonth(maxdate.getMonth()+6);
+ dd = maxdate.getDate();
+ mm = maxdate.getMonth()+1; //January is 0!
+ yyyy = maxdate.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+
+maxdate = yyyy+'-'+mm+'-'+dd;
+document.getElementById("datefield").setAttribute("max", maxdate);
+</script>
 </body>
 
 </html>

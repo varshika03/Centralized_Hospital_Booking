@@ -11,8 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "date-and-time": "^0.6.2",
     "express": "^4.16.3",
     "hbs": "^4.0.1",
+    "jshint": "^2.9.5",
     "mysql": "^2.15.0"
   }
 }

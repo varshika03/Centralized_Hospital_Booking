@@ -6,7 +6,7 @@ var pool = mysql.createPool({
         host: "localhost",
         user: "root",
         password: "0305",
-        port: process.env.PORT
+        port: process.env.port
     });
 
 module.exports.getConnection = function(callback) {

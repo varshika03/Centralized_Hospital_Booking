@@ -10,20 +10,20 @@
 <h1>ADD HOSPITAL</h1>
 <form action="/hospitalsAdded" method="post">
  <b>id:</b><br>
-  <input type="number" name="hid"><br>
+  <input type="number" name="hid" required><br>
   <b>Name:</b><br>
-  <input type="text" name="name"><br>
+  <input type="text" name="name" required><br>
  <b> Address:</b><br>
-  <input type="text" name="address"><br>
+  <input type="text" name="address" required><br>
    <b>Type:</b><br>
    <select name="type" class="select_form">
    <option value="govt">Government</option>
    <option value="private">Private</option>
   </select><br>
   <b>Contact Number</b><br>
-  <input type="number" name="Contact"><br>
+  <input type="number" name="Contact" required><br>
  <b>Temporary Password:</b><br>
-  <input type="text" name="password"><br>
+  <input type="password" name="password" required><br>
   <input type="submit" value="Add Hospital" class="next">
 </form>
 </div>
